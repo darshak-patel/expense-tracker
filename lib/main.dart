@@ -93,7 +93,7 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
             elevation: 5,
           ),
         ),
-        ListItem(transactions: transactions)
+        Expanded(child: ListItem(transactions: transactions))
       ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
