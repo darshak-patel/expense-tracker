@@ -57,6 +57,7 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
           .add(Transaction(id: '3', title: _titleController.value.text, amount: double.parse(_amountController.value.text), date: DateTime.now()));
       _titleController.clear();
       _amountController.clear();
+      Navigator.of(context).pop();
     });
   }
 
