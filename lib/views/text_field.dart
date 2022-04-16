@@ -24,7 +24,6 @@ class TextFieldClass extends StatelessWidget {
                 onPressed: addTransaction,
                 child: const Text(
                   'Add Transaction',
-                  style: TextStyle(color: Colors.purple),
                 ))
           ],
         ),

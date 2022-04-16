@@ -15,8 +15,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ExpenseTracker(),
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.purple),
+      home: const ExpenseTracker(),
     );
   }
 }
@@ -66,7 +67,6 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Expense Tracker"),
-        backgroundColor: const Color.fromRGBO(136, 3, 252, 1),
         foregroundColor: Colors.white,
         actions: [
           IconButton(
@@ -108,7 +108,6 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
           Icons.add,
           color: Colors.white,
         ),
-        backgroundColor: const Color.fromRGBO(136, 3, 252, 1),
       ),
     );
   }
