@@ -1,8 +1,5 @@
-import 'dart:ffi';
-
 import 'package:expense_tracker/model/transaction.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import './views/text_field.dart';
 import './views/list_item.dart';
 
@@ -31,8 +28,8 @@ class ExpenseTracker extends StatefulWidget {
 
 class _ExpenseTrackerState extends State<ExpenseTracker> {
   final List<Transaction> transactions = [
-    Transaction(id: '1', title: 'Coffee', amount: 12.10, date: DateTime.now()),
-    Transaction(id: '2', title: 'Starbucks', amount: 15.50, date: DateTime.parse('2022-04-01'))
+    // Transaction(id: '1', title: 'Coffee', amount: 12.10, date: DateTime.now()),
+    // Transaction(id: '2', title: 'Starbucks', amount: 15.50, date: DateTime.parse('2022-04-01'))
   ];
 
   late TextEditingController _amountController;
