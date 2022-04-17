@@ -11,7 +11,25 @@ class ListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return transactions.isEmpty
         ? Column(
-            children: [const Text('No transaction added yet'), Image.asset('assets/images/waiting.png')],
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 10),
+                child: const Text(
+                  'No transaction added yet',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const SizedBox(
+                height: 150,
+                child: Image(
+                  fit: BoxFit.fill,
+                  image: AssetImage('/Users/darshak16091997/Desktop/flutter/expense_tracker/lib/assets/waiting.png'),
+                ),
+              )
+            ],
           )
         : ListView.builder(
             scrollDirection: Axis.vertical,
