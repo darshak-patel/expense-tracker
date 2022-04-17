@@ -2,6 +2,7 @@ import 'package:expense_tracker/model/transaction.dart';
 import 'package:flutter/material.dart';
 import './views/text_field.dart';
 import './views/list_item.dart';
+import './views/chart.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -31,6 +32,12 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
     // Transaction(id: '1', title: 'Coffee', amount: 12.10, date: DateTime.now()),
     // Transaction(id: '2', title: 'Starbucks', amount: 15.50, date: DateTime.parse('2022-04-01'))
   ];
+
+  List<Transaction> get _recentTransactions {
+    return transactions.where((element) {
+      return element.date.isAfter(DateTime.now().subtract(const Duration(days: 7)));
+    }).toList();
+  }
 
   late TextEditingController _amountController;
   late TextEditingController _titleController;
@@ -91,6 +98,7 @@ class _ExpenseTrackerState extends State<ExpenseTracker> {
             elevation: 5,
           ),
         ),
+        Chart(recentTransactions: _recentTransactions),
         Expanded(child: ListItem(transactions: transactions))
       ]),
       floatingActionButton: FloatingActionButton(
