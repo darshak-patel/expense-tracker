@@ -29,7 +29,11 @@ class Chart extends StatelessWidget {
       elevation: 6,
       margin: const EdgeInsets.all(20),
       child: Row(
-        children: [],
+        children: [
+          ...groupedTransactionValues.map((e) {
+            return Text("${e['day']}: ${e['amount']}");
+          }).toList()
+        ],
       ),
     );
   }
